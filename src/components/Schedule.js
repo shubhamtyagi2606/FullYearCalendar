@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { faTimesCircle, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
+// import axios from "axios";
 
 const Schedule = ({
   selected_date,

@@ -1,9 +1,9 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+// import axios from "axios";
+import { useEffect } from "react";
 import DateBlock from "./DateBlock";
 
 const DateGrid = ({ year, month, date, changeDate }) => {
-  const [scheduleList, setScheduleList] = useState([]);
+  // const [scheduleList, setScheduleList] = useState([]);
 
   useEffect(
     function () {
@@ -13,7 +13,7 @@ const DateGrid = ({ year, month, date, changeDate }) => {
   );
 
   let rows = [];
-  let className = "date-columns columns ";
+  // let className = "date-columns columns ";
   let colorArray = { 30: "purple", 31: "green" };
   let key = year % 4 === 0 ? 29 : 28;
   colorArray[key] = "yellow";
@@ -31,22 +31,22 @@ const DateGrid = ({ year, month, date, changeDate }) => {
     //   });
   };
 
-  const hasEvents = scheduleList.map((schedule) => {
-    return new Date(schedule.date).getDate();
-  });
+  // const hasEvents = scheduleList.map((schedule) => {
+  //   return new Date(schedule.date).getDate();
+  // });
 
   for (let i = 1; i < 8; i++) {
     let columns = [];
     let k = i;
     for (let j = 1; j < 6; j++) {
       const dateValue = j > 1 ? (k = k + 7) : k;
-      const newClass =
-        className + (hasEvents.indexOf(dateValue) !== -1 ? "has-events" : "");
+      // const newClass =
+      //   className + (hasEvents.indexOf(dateValue) !== -1 ? "has-events" : "");
       columns.push(
         <td
           key={dateValue}
           className={
-            newClass +
+            // newClass +
             " text-" +
             (colorArray[dateValue] ? colorArray[dateValue] : "")
           }

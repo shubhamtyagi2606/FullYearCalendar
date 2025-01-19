@@ -4,7 +4,7 @@ const MonthGrid = ({ year, month, changeMonth }) => {
   const months = [
     "Jan", "Fab", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
-  months.map((monthValue, index) => {
+  months.forEach((monthValue, index) => {
     firstDay[index] = new Date(year, index, 0).getDay();
     lastDay[index] = new Date(year, index + 1, 0).getDate();
   });

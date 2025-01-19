@@ -4,13 +4,12 @@ import Button from "react-bootstrap/Button";
 import { useEffect, useState } from "react";
 import { faPlus, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import Schedule from "./Schedule";
+// import Schedule from "./Schedule";
 
 const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListByMonth }) => {
   const [addSchedule, setAddSchedule] = useState(false);
-  const [schedule, setSchedule] = useState("");
-  const [scheduleList, setScheduleList] = useState([]);
+  // const [schedule, setSchedule] = useState("");
+  // const [scheduleList, setScheduleList] = useState([]);
 
   useEffect(
     function () {
@@ -18,7 +17,7 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
         getScheduleList();
       }
     },
-    [date]
+    [date, dateValue]
   );
 
   const current_day = new Date();
@@ -64,7 +63,7 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
     <Popover>
       <Popover.Body>
         <div className="schedule-popup">
-          {scheduleList.length > 0 && (
+          {/* {scheduleList.length > 0 && (
             <ul>
               {scheduleList.map((schedule, index) => {
                 return (
@@ -79,11 +78,11 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
                 );
               })}
             </ul>
-          )}
+          )} */}
           {addSchedule && (
             <div className="add-textarea">
               <textarea
-                onChange={(e) => setSchedule(e.target.value)}
+                // onChange={(e) => setSchedule(e.target.value)}
               ></textarea>
               <FontAwesomeIcon
                 icon={faSave}
