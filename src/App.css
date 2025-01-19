@@ -1,0 +1,137 @@
+.container {
+    margin-top: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+table tbody tr td.year-grid {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 20%;
+    font-size: 40px;
+}
+
+.arrow {
+    border: none;
+    background: none;
+}
+
+table tbody tr td.columns {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 14.14%;
+    height: 60px;
+}
+
+.text-red {
+    color: #e96565;
+}
+
+.text-yellow {
+    color: #dbd092;
+}
+
+.text-purple {
+    color: #7634a5;
+}
+
+.text-green {
+    color: #279792;
+}
+
+.open-popup {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.schedule-popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.schedule-popup ul li {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.schedule-popup ul li span {
+    display: block;
+    font-size: 17px;
+}
+
+.schedule-popup ul li .delete-icon {
+    color: red;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.schedule-popup .add-schedule {
+    background-color: #6dcf7b;
+    border-color: #6dcf7b;
+    font-weight: bold;
+    border-radius: 0;
+    color: white;
+    width: 100%;
+}
+
+.month-columns:hover {
+    background-color: grey;
+    color: white;
+}
+
+.schedule-popup .add-schedule span {
+    font-size: 20px;
+    margin: 5px;
+}
+
+td:has(>.current-date) {
+    background-color: aqua;
+}
+
+.current-month {
+    background-color: aqua;
+    color: black;
+}
+
+.current-day {
+    background-color: aqua;
+    color: black;
+}
+
+.month {
+    cursor: pointer;
+}
+
+.schedule-popup {
+    width: 220px;
+}
+
+.save-icon {
+    color: #6dcf7b;
+    text-align: center;
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+.has-events .dot {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.selected-month {
+    background-color: grey;
+    color: white;
+}
