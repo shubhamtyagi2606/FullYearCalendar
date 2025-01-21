@@ -1,19 +1,18 @@
 // import axios from "axios";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import DateBlock from "./DateBlock";
 
 const DateGrid = ({ year, month, date, changeDate }) => {
   // const [scheduleList, setScheduleList] = useState([]);
 
-  useEffect(
-    function () {
-      getScheduleListByMonth();
-    },
-    [month,year]
-  );
+  // useEffect(
+  //   function () {
+  //     getScheduleListByMonth();
+  //   },
+  //   [month,year]
+  // );
 
   let rows = [];
-  // let className = "date-columns columns ";
   let colorArray = { 30: "purple", 31: "green" };
   let key = year % 4 === 0 ? 29 : 28;
   colorArray[key] = "yellow";
@@ -47,7 +46,7 @@ const DateGrid = ({ year, month, date, changeDate }) => {
           key={dateValue}
           className={
             // newClass +
-            " text-" +
+            "date-columns columns text-" +
             (colorArray[dateValue] ? colorArray[dateValue] : "")
           }
         >

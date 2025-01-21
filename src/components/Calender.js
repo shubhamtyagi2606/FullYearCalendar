@@ -30,7 +30,7 @@ const Calender = () => {
         </tr>
         <tr>
           <DateGrid year={year} month={month} date={date} changeDate={changeDate}/>
-          <DayGrid />
+          <DayGrid year={year} month={month} date={date}/>
         </tr>
       </tbody>
     </table>

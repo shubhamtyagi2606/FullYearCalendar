@@ -52,10 +52,10 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
     //     date: selected_date + date,
     //   })
     //   .then(({ data }) => {
-    //     setScheduleList(data);
-    //     setAddSchedule(false);
-    //     setSchedule("");
-    //     getScheduleListByMonth()
+        // setScheduleList(data);
+        setAddSchedule(false);
+        // setSchedule("");
+        // getScheduleListByMonth()
     //   });
   };
 
