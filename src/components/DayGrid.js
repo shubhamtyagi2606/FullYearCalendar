@@ -7,9 +7,9 @@ const DayGrid = ({ year, month, date }) => {
     let k = 0;
     for (let j = 0; j < days.length; j++) {
       const dayIndex = i + j < days.length ? i + j : k++;
-      const className = (dayIndex === (new Date(year, month, date).getDay() - 1) && year === new Date().getFullYear()) ? "day-columns columns current-day " : "day-columns columns ";
+      const className = (dayIndex === (new Date().getDay() - 1) && month === new Date().getMonth() && year === new Date().getFullYear()) ? "day-column active " : "day-column ";
       columns.push(
-        <td
+        <div
           key={dayIndex}
           className={
             dayIndex === 6
@@ -18,18 +18,16 @@ const DayGrid = ({ year, month, date }) => {
           }
         >
           {days[dayIndex]}
-        </td>
+        </div>
       );
     }
-    rows.push(<tr key={i}>{columns}</tr>);
+    rows.push(<div className="row" key={i}>{columns}</div>);
   }
 
   return (
-    <td className="day-grid">
-      <table>
-        <tbody>{rows}</tbody>
-      </table>
-    </td>
+    <div className="day-grid">
+      {rows}
+    </div>
   );
 };
 

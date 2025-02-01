@@ -2,7 +2,7 @@ const MonthGrid = ({ year, month, changeMonth }) => {
   let firstDay = [];
   let lastDay = [];
   const months = [
-    "Jan", "Fab", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
   months.forEach((monthValue, index) => {
     firstDay[index] = new Date(year, index, 0).getDay();
@@ -22,7 +22,7 @@ const MonthGrid = ({ year, month, changeMonth }) => {
       }
 
       let className =
-        "month-columns columns " +
+        "month-column " +
         (monthIndex === month && monthIndex !== new Date().getMonth() ? "selected-month" : "") +
         " text-";
       let colorArray = {
@@ -33,33 +33,30 @@ const MonthGrid = ({ year, month, changeMonth }) => {
       };
 
       columns.push(
-        <td
+        <div
           key={i + j}
           className={
             monthIndex === new Date().getMonth() &&
               year === new Date().getFullYear()
-              ? className + colorArray[lastDay[monthIndex]] + " current-month"
+              ? className + colorArray[lastDay[monthIndex]] + " active"
               : className + colorArray[lastDay[monthIndex]]
           }
+          onClick={() => changeMonth(monthIndex)}
         >
-          <span className="month" onClick={() => changeMonth(monthIndex)}>
-            {monthIndex === null ? "" : months[monthIndex]}
-          </span>
-        </td>
+          {monthIndex === null ? "" : months[monthIndex]}
+        </div>
       );
       if (monthIndex !== null) {
         firstDay[monthIndex] = "";
       }
     }
-    rows.push(<tr key={i}>{columns}</tr>);
+    rows.push(<div className="row" key={i}>{columns}</div>);
   }
 
   return (
-    <td className="month-grid">
-      <table>
-        <tbody>{rows}</tbody>
-      </table>
-    </td>
+    <div className="month-grid">
+      {rows}
+    </div>
   );
 };
 

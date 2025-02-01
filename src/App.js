@@ -5,7 +5,7 @@ import Calender from "./components/Calender";
 function App() {
   return (
     <div className="App">
-      <div className="container text-center">
+      <div className="container">
         <Calender/>
       </div>
     </div>

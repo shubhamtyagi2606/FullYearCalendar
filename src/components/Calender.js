@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import DateGrid from "./DateGrid";
 import DayGrid from "./DayGrid";
 import MonthGrid from "./MonthGrid";
@@ -22,18 +22,16 @@ const Calender = () => {
   };
 
   return (
-    <table>
-      <tbody>
-        <tr>
-          <YearGrid year={year} changeYear={changeYear} />
-          <MonthGrid year={year} month={month} changeMonth={changeMonth}/>
-        </tr>
-        <tr>
-          <DateGrid year={year} month={month} date={date} changeDate={changeDate}/>
-          <DayGrid year={year} month={month} date={date}/>
-        </tr>
-      </tbody>
-    </table>
+    <div className="calander">
+      <div className="upper-row row">
+        <YearGrid year={year} changeYear={changeYear} />
+        <MonthGrid year={year} month={month} changeMonth={changeMonth} />
+      </div>
+      <div className="lower-row row">
+        <DateGrid year={year} month={month} date={date} changeDate={changeDate} />
+        <DayGrid year={year} month={month} date={date} />
+      </div>
+    </div>
   );
 };
 

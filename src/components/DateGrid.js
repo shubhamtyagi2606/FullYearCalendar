@@ -42,12 +42,13 @@ const DateGrid = ({ year, month, date, changeDate }) => {
       // const newClass =
       //   className + (hasEvents.indexOf(dateValue) !== -1 ? "has-events" : "");
       columns.push(
-        <td
+        <div
           key={dateValue}
           className={
             // newClass +
-            "date-columns columns text-" +
-            (colorArray[dateValue] ? colorArray[dateValue] : "")
+            "date-column text-" +
+            (colorArray[dateValue] ? colorArray[dateValue] : " ") +
+            (dateValue === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear() ? " active" : "")
           }
         >
           <DateBlock
@@ -59,18 +60,16 @@ const DateGrid = ({ year, month, date, changeDate }) => {
             changeDate={changeDate}
             getScheduleListByMonth={getScheduleListByMonth}
           ></DateBlock>
-        </td>
+        </div>
       );
     }
-    rows.push(<tr key={i}>{columns}</tr>);
+    rows.push(<div className="row" key={i}>{columns}</div>);
   }
 
   return (
-    <td className="date-grid">
-      <table>
-        <tbody>{rows}</tbody>
-      </table>
-    </td>
+    <div className="date-grid">
+      {rows}
+    </div>
   );
 };
 
