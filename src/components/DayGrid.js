@@ -7,7 +7,7 @@ const DayGrid = ({ year, month, date }) => {
     let k = 0;
     for (let j = 0; j < days.length; j++) {
       const dayIndex = i + j < days.length ? i + j : k++;
-      const className = (dayIndex === (new Date(year, month, date).getDay() - 1)) ? "day-columns columns current-day " : "day-columns columns ";
+      const className = (dayIndex === (new Date(year, month, date).getDay() - 1) && year === new Date().getFullYear()) ? "day-columns columns current-day " : "day-columns columns ";
       columns.push(
         <td
           key={dayIndex}
