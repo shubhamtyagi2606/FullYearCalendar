@@ -7,7 +7,7 @@ const DayGrid = ({ year, month, date }) => {
     let k = 0;
     for (let j = 0; j < days.length; j++) {
       const dayIndex = i + j < days.length ? i + j : k++;
-      const className = (dayIndex === (new Date().getDay() - 1) && month === new Date().getMonth() && year === new Date().getFullYear()) ? "day-column active " : "day-column ";
+      const className = ((date > 7 ? Math.ceil(date % 7) === 0 ? 7 : Math.ceil(date % 7) : date) === (i + 1) && dayIndex === (new Date(year, month, date).getDay() - 1) && month === new Date().getMonth() && year === new Date().getFullYear()) ? "day-column active " : "day-column ";
       columns.push(
         <div
           key={dayIndex}

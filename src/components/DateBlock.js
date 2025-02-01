@@ -108,12 +108,12 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
   );
 
   return (
-    <OverlayTrigger
-      trigger="click"
-      overlay={popover}
-      placement="auto"
-      rootClose={true}
-    >
+    // <OverlayTrigger
+    //   trigger="click"
+    //   overlay={popover}
+    //   placement="auto"
+    //   rootClose={true}
+    // >
       <span
         onClick={() => changeDate(dateValue)}
         className={
@@ -125,7 +125,7 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
         {dateValue <= new Date(year, month + 1, 0).getDate() ? dateValue : ""}
         <span className="dot"></span>
       </span>
-    </OverlayTrigger>
+    // </OverlayTrigger>
   );
 };
 

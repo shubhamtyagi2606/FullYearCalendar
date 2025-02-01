@@ -4,6 +4,12 @@ const MonthGrid = ({ year, month, changeMonth }) => {
   const months = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
+  let colorArray = {
+    28: "yellow",
+    29: "yellow",
+    30: "purple",
+    31: "green",
+  };
   months.forEach((monthValue, index) => {
     firstDay[index] = new Date(year, index, 0).getDay();
     lastDay[index] = new Date(year, index + 1, 0).getDate();
@@ -21,27 +27,18 @@ const MonthGrid = ({ year, month, changeMonth }) => {
         }
       }
 
-      let className =
-        "month-column " +
-        (monthIndex === month && monthIndex !== new Date().getMonth() ? "selected-month" : "") +
-        " text-";
-      let colorArray = {
-        28: "yellow",
-        29: "yellow",
-        30: "purple",
-        31: "green",
-      };
+      let className ="month-column text-";
 
       columns.push(
         <div
           key={i + j}
           className={
-            monthIndex === new Date().getMonth() &&
+            monthIndex === month &&
               year === new Date().getFullYear()
               ? className + colorArray[lastDay[monthIndex]] + " active"
               : className + colorArray[lastDay[monthIndex]]
           }
-          onClick={() => changeMonth(monthIndex)}
+          {...(colorArray[lastDay[monthIndex]] !== undefined && { onClick: () => changeMonth(monthIndex) })}
         >
           {monthIndex === null ? "" : months[monthIndex]}
         </div>
