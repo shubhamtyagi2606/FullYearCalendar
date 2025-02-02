@@ -22,7 +22,7 @@ const Calender = () => {
   };
 
   return (
-    <div className="calander">
+    <div className="container">
       <div className="upper-row row">
         <YearGrid year={year} changeYear={changeYear} />
         <MonthGrid year={year} month={month} changeMonth={changeMonth} />

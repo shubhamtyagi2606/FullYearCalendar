@@ -10,7 +10,7 @@ const DayGrid = ({ year, month, date }) => {
       const className = ((date > 7 ? Math.ceil(date % 7) === 0 ? 7 : Math.ceil(date % 7) : date) === (i + 1) && dayIndex === ((new Date(year, month, date).getDay() === 0 ? 7 : new Date(year, month, date).getDay()) - 1)) ? "day-column active " : "day-column ";
       columns.push(
         <div
-          data-key={dayIndex}
+          key={dayIndex}
           className={
             dayIndex === 6
               ? className + "text-red"

@@ -1,6 +1,9 @@
 body {
     background-image: url("../public/background.jpg");
     background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -10,18 +13,13 @@ body {
     color: white;
 }
 
-.upper-row {
-    width: 1000px;
-    margin:0 auto;
-    background-color: rgb(0, 0, 0, 0.5);
-    clear:both;
-}
-
+.upper-row,
 .lower-row {
-    width: 1000px;
-    margin:0 auto;
-    background-color: rgb(0, 0, 0, 0.5);
-    clear:both;
+    max-width: 1007px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 }
 
 .year-grid {
@@ -30,9 +28,7 @@ body {
     justify-content: space-between;
     font-size: 50px;
     border: 1px solid white;
-    height: 150px;
     width: 30%;
-    margin: 0 auto;
 }
 
 .arrow {
@@ -48,38 +44,34 @@ body {
     font-size: 18px;
     border: 1px solid white;
     flex-wrap: wrap;
-    margin: 0 auto;
     width: 30%;
-    height: 350px;
 }
 
 .date-column {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    width: 59px;
+    width: 60px;
     height: 50px;
 }
 
-.month-grid {
+.month-grid,
+.day-grid {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    font-size: 18px;
     border: 1px solid white;
+    font-size: 18px;
     flex-wrap: wrap;
     width: 70%;
-    height: 150px;
 }
 
-.month-column {
+.month-column,
+.day-column {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    width: 99px;
+    width: 100px;
     height: 50px;
 }
 
@@ -87,27 +79,6 @@ body {
     background-color: white;
     color: black;
     cursor: pointer;
-}
-
-.day-grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 18px;
-    border: 1px solid white;
-    width: 70%;
-    flex-wrap: wrap;
-    height: 350px;
-}
-
-.day-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 99px;
-    height: 50px;
 }
 
 .text-red {
@@ -131,69 +102,38 @@ body {
     color: black;
 }
 
-.open-popup {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-}
+@media screen and (max-width: 480px) {
+    .container {
+        margin-top: 30px;
+    }
 
-.schedule-popup ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 10px;
-}
+    .year-grid {
+        font-size: 24px;
+        height: 100px;
+        width: 100%;
+    }
 
-.schedule-popup ul li {
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-}
+    .date-grid,
+    .month-grid,
+    .day-grid {
+        width: 100%;
+        font-size: 14px;
+        padding: 5px;
+    }
 
-.schedule-popup ul li span {
-    display: block;
-    font-size: 17px;
-}
+    .date-grid {
+        flex-wrap: nowrap;
+    }
 
-.schedule-popup ul li .delete-icon {
-    color: red;
-    cursor: pointer;
-    margin-top: 4px;
-}
+    .date-column {
+        margin: 0 auto;
+    }
 
-.schedule-popup .add-schedule {
-    background-color: #6dcf7b;
-    border-color: #6dcf7b;
-    font-weight: bold;
-    border-radius: 0;
-    color: white;
-    width: 100%;
-}
-
-.schedule-popup .add-schedule span {
-    font-size: 18px;
-    margin: 5px;
-}
-
-.schedule-popup {
-    width: 218px;
-}
-
-.save-icon {
-    color: #6dcf7b;
-    text-align: center;
-    margin-top: 13px;
-    cursor: pointer;
-}
-
-.has-events .dot {
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    background-color: black;
-}
-
-.selected-month {
-    background-color: grey;
-    color: white;
+    .date-column,
+    .day-column,
+    .month-column {
+        width: 48px;
+        height: 35px;
+        font-size: 12px;
+    }
 }
