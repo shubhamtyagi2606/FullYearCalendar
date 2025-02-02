@@ -4,9 +4,20 @@
 // import { useEffect } from "react";
 // import { faPlus, faSave } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import Schedule from "./Schedule";
 
-const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListByMonth }) => {
+import React from "react";
+
+// import Schedule from "./Schedule";
+interface DateBlockProps {
+  year: number;
+  month: number;
+  date: number;
+  changeDate: (date: number) => void;
+  dateValue: number;
+  getScheduleListByMonth: () => void;
+}
+
+const DateBlock: React.FC<DateBlockProps> = ({ year, month, date, changeDate, dateValue, getScheduleListByMonth }) => {
   // const [addSchedule, setAddSchedule] = useState(false);
   // const [schedule, setSchedule] = useState("");
   // const [scheduleList, setScheduleList] = useState([]);
@@ -19,7 +30,6 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
   //   },
   //   [date, dateValue]
   // );
-
   const current_day = new Date();
   const current_date =
     current_day.getFullYear() +
@@ -38,25 +48,25 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
     (dateValue.toString().length > 1 ? "-" : "-0");
 
   // const getScheduleList = async () => {
-    // await axios
-    //   .get(`http://localhost:4001/api/v1/schedule/` + selected_date + date)
-    //   .then(({ data }) => {
-    //     setScheduleList(data);
-    //   });
+  // await axios
+  //   .get(`http://localhost:4001/api/v1/schedule/` + selected_date + date)
+  //   .then(({ data }) => {
+  //     setScheduleList(data);
+  //   });
   // };
 
   // const saveSchedule = async () => {
-    // await axios
-    //   .post(`http://localhost:4001/api/v1/schedule`, {
-    //     task: schedule,
-    //     date: selected_date + date,
-    //   })
-    //   .then(({ data }) => {
-        // setScheduleList(data);
-        // setAddSchedule(false);
-        // setSchedule("");
-        // getScheduleListByMonth()
-    //   });
+  // await axios
+  //   .post(`http://localhost:4001/api/v1/schedule`, {
+  //     task: schedule,
+  //     date: selected_date + date,
+  //   })
+  //   .then(({ data }) => {
+  // setScheduleList(data);
+  // setAddSchedule(false);
+  // setSchedule("");
+  // getScheduleListByMonth()
+  //   });
   // };
 
   // const popover = (
@@ -107,14 +117,15 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
   //   </Popover>
   // );
 
-  return (
-    // <OverlayTrigger
-    //   trigger="click"
-    //   overlay={popover}
-    //   placement="auto"
-    //   rootClose={true}
-    // >
-      <span
+  return <React.Fragment>
+    {
+      // <OverlayTrigger
+      //   trigger="click"
+      //   overlay={popover}
+      //   placement="auto"
+      //   rootClose={true}
+      // >
+      dateValue <= new Date(year, month + 1, 0).getDate() && <span
         onClick={() => changeDate(dateValue)}
         className={
           selected_date + dateValue === current_date
@@ -122,11 +133,12 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
             : "position-relative open-popup"
         }
       >
-        {dateValue <= new Date(year, month + 1, 0).getDate() ? dateValue : ""}
-        <span className="dot"></span>
+        {dateValue}
+        {/* <span className="dot"></span> */}
       </span>
-    // </OverlayTrigger>
-  );
+      // </OverlayTrigger>
+    }
+  </React.Fragment>
 };
 
 export default DateBlock;

@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "author": "Vishad Tyagi",
+    "type": "module",
     "dependencies": {
         "@fortawesome/free-solid-svg-icons": "^6.3.0",
         "@fortawesome/react-fontawesome": "^0.2.0",
@@ -14,8 +15,7 @@
         "react": "^18.2.0",
         "react-bootstrap": "^2.7.2",
         "react-dom": "^18.2.0",
-        "react-scripts": "5.0.1",
-        "web-vitals": "^2.1.4"
+        "react-scripts": "5.0.1"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -40,5 +40,10 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@types/react": "^19.0.8",
+        "@types/react-dom": "^19.0.3",
+        "typescript": "^4.9.5"
     }
 }

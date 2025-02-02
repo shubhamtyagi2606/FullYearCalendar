@@ -1,4 +1,10 @@
-const DayGrid = ({ year, month, date }) => {
+interface DayGridProps {
+  year: number;
+  month: number;
+  date: number;
+}
+
+const DayGrid: React.FC<DayGridProps> = ({ year, month, date }) => {
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   let rows = [];

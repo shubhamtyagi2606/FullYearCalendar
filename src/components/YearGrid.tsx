@@ -1,8 +1,12 @@
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
-const YearGrid = ({ year, changeYear }) => {
+interface YearGridProps {
+  year: number;
+  changeYear: (year: number) => void;
+}
+
+const YearGrid: React.FC<YearGridProps> = ({ year, changeYear }) => {
   return (
     <div className="year-grid">
       <button className="arrow">

@@ -2,7 +2,14 @@
 // import { useEffect } from "react";
 import DateBlock from "./DateBlock";
 
-const DateGrid = ({ year, month, date, changeDate }) => {
+interface DateGridProps {
+  year: number;
+  month: number;
+  date: number;
+  changeDate: (date: number) => void;
+}
+
+const DateGrid: React.FC<DateGridProps> = ({ year, month, date, changeDate }) => {
   // const [scheduleList, setScheduleList] = useState([]);
 
   // useEffect(
@@ -12,10 +19,10 @@ const DateGrid = ({ year, month, date, changeDate }) => {
   //   [month,year]
   // );
 
-  let rows = [];
-  let colorArray = { 30: "purple", 31: "green" };
-  let key = year % 4 === 0 ? 29 : 28;
-  colorArray[key] = "yellow";
+  const rows: JSX.Element[] = [];
+  let colorArray: Record<number, string> = { 30: "purple", 31: "green" };
+  const key = year % 4 === 0 ? 29 : 28;
+  colorArray = { ...colorArray, [key]: "yellow" };
 
   const getScheduleListByMonth = async () => {
     // await axios
@@ -38,7 +45,7 @@ const DateGrid = ({ year, month, date, changeDate }) => {
     let columns = [];
     let k = i;
     for (let j = 1; j < 6; j++) {
-      const dateValue = j > 1 ? (k = k + 7) : k;
+      const dateValue: number = j > 1 ? (k = k + 7) : k;
       // const newClass =
       //   className + (hasEvents.indexOf(dateValue) !== -1 ? "has-events" : "");
       columns.push(
@@ -46,8 +53,8 @@ const DateGrid = ({ year, month, date, changeDate }) => {
           key={dateValue}
           className={
             // newClass +
-            "date-column text-" +
-            (colorArray[dateValue] ? colorArray[dateValue] : " ") +
+            "date-column " +
+            (colorArray.hasOwnProperty(dateValue) ? "text-" + colorArray[dateValue] : "") +
             (dateValue === date ? " active" : "")
           }
         >

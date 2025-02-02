@@ -9,15 +9,15 @@ const Calender = () => {
   const [month, setMonth] = useState(new Date().getMonth());
   const [date, setDate] = useState(new Date().getDate());
 
-  const changeYear = (updatedYear) => {
+  const changeYear = (updatedYear: number) => {
     setYear(updatedYear);
   };
 
-  const changeMonth = (updatedMonth) => {
+  const changeMonth = (updatedMonth: number) => {
     setMonth(updatedMonth);
   };
 
-  const changeDate = (updatedDate) => {
+  const changeDate = (updatedDate: number) => {
     setDate(updatedDate);
   };
 

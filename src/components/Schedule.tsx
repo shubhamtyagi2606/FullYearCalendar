@@ -3,7 +3,18 @@ import { faTimesCircle, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import axios from "axios";
 
-const Schedule = ({
+interface ScheduleProps {
+  selected_date: string;
+  date: string;
+  schedule: {
+    _id: string;
+    task: string;
+  };
+  getScheduleList: () => void;
+  getScheduleListByMonth: () => void;
+}
+
+const Schedule:React.FC<ScheduleProps> = ({
   selected_date,
   date,
   schedule,
@@ -13,16 +24,16 @@ const Schedule = ({
   const [editSchedule, setEditSchedule] = useState(schedule.task);
   const [edit, setEdit] = useState(false);
 
-  const deleteSchedule = async (id) => {
+  // const deleteSchedule = async (id) => {
     // await axios
     //   .delete(`http://localhost:4001/api/v1/schedule/` + id)
     //   .then(() => {
     //     getScheduleList();
     //     getScheduleListByMonth();
     //   });
-  };
+  // };
 
-  const saveEditSchedule = async (id) => {
+  // const saveEditSchedule = async (id) => {
     // await axios
     //   .patch(`http://localhost:4001/api/v1/schedule/` + id, {
     //     task: editSchedule,
@@ -32,7 +43,7 @@ const Schedule = ({
     //     setEdit(false);
     //     getScheduleList(data);
     //   });
-  };
+  // };
 
   return (
     <li>
@@ -47,7 +58,7 @@ const Schedule = ({
             size="xl"
             pull="right"
             className="save-icon"
-            onClick={() => saveEditSchedule(schedule._id)}
+            // onClick={() => saveEditSchedule(schedule._id)}
           />
         </div>
       )}
@@ -58,7 +69,7 @@ const Schedule = ({
             icon={faTimesCircle}
             size="lg"
             className="delete-icon"
-            onClick={() => deleteSchedule(schedule._id)}
+            // onClick={() => deleteSchedule(schedule._id)}
           />
         </>
       )}
