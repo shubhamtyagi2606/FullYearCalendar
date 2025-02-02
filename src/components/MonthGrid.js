@@ -33,8 +33,7 @@ const MonthGrid = ({ year, month, changeMonth }) => {
         <div
           key={i + j}
           className={
-            monthIndex === month &&
-              year === new Date().getFullYear()
+            monthIndex === month
               ? className + colorArray[lastDay[monthIndex]] + " active"
               : className + colorArray[lastDay[monthIndex]]
           }

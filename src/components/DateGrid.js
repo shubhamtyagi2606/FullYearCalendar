@@ -48,7 +48,7 @@ const DateGrid = ({ year, month, date, changeDate }) => {
             // newClass +
             "date-column text-" +
             (colorArray[dateValue] ? colorArray[dateValue] : " ") +
-            (dateValue === date && month === new Date().getMonth() && year === new Date().getFullYear() ? " active" : "")
+            (dateValue === date ? " active" : "")
           }
         >
           <DateBlock

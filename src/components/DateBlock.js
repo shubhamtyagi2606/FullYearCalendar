@@ -1,24 +1,24 @@
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Popover from "react-bootstrap/Popover";
-import Button from "react-bootstrap/Button";
-import { useEffect, useState } from "react";
-import { faPlus, faSave } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+// import Popover from "react-bootstrap/Popover";
+// import Button from "react-bootstrap/Button";
+// import { useEffect } from "react";
+// import { faPlus, faSave } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import Schedule from "./Schedule";
 
 const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListByMonth }) => {
-  const [addSchedule, setAddSchedule] = useState(false);
+  // const [addSchedule, setAddSchedule] = useState(false);
   // const [schedule, setSchedule] = useState("");
   // const [scheduleList, setScheduleList] = useState([]);
 
-  useEffect(
-    function () {
-      if (date === dateValue) {
-        getScheduleList();
-      }
-    },
-    [date, dateValue]
-  );
+  // useEffect(
+  //   function () {
+  //     if (date === dateValue) {
+  //       getScheduleList();
+  //     }
+  //   },
+  //   [date, dateValue]
+  // );
 
   const current_day = new Date();
   const current_date =
@@ -37,15 +37,15 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
     (month.toString().length > 1 ? "-" + (month + 1) : "-0" + (month + 1)) +
     (dateValue.toString().length > 1 ? "-" : "-0");
 
-  const getScheduleList = async () => {
+  // const getScheduleList = async () => {
     // await axios
     //   .get(`http://localhost:4001/api/v1/schedule/` + selected_date + date)
     //   .then(({ data }) => {
     //     setScheduleList(data);
     //   });
-  };
+  // };
 
-  const saveSchedule = async () => {
+  // const saveSchedule = async () => {
     // await axios
     //   .post(`http://localhost:4001/api/v1/schedule`, {
     //     task: schedule,
@@ -53,59 +53,59 @@ const DateBlock = ({ year, month, date, changeDate, dateValue, getScheduleListBy
     //   })
     //   .then(({ data }) => {
         // setScheduleList(data);
-        setAddSchedule(false);
+        // setAddSchedule(false);
         // setSchedule("");
         // getScheduleListByMonth()
     //   });
-  };
+  // };
 
-  const popover = (
-    <Popover>
-      <Popover.Body>
-        <div className="schedule-popup">
-          {/* {scheduleList.length > 0 && (
-            <ul>
-              {scheduleList.map((schedule, index) => {
-                return (
-                  <Schedule
-                    key={index}
-                    selected_date={selected_date}
-                    date={date}
-                    schedule={schedule}
-                    getScheduleList={getScheduleList}
-                    getScheduleListByMonth={getScheduleListByMonth}
-                  />
-                );
-              })}
-            </ul>
-          )} */}
-          {addSchedule && (
-            <div className="add-textarea">
-              <textarea
-                // onChange={(e) => setSchedule(e.target.value)}
-              ></textarea>
-              <FontAwesomeIcon
-                icon={faSave}
-                size="xl"
-                pull="right"
-                className="save-icon"
-                onClick={() => saveSchedule()}
-              />
-            </div>
-          )}
-          {!addSchedule && (
-            <Button
-              className="add-schedule"
-              onClick={() => setAddSchedule(true)}
-            >
-              <FontAwesomeIcon icon={faPlus} />
-              <span>Add</span>
-            </Button>
-          )}
-        </div>
-      </Popover.Body>
-    </Popover>
-  );
+  // const popover = (
+  //   <Popover>
+  //     <Popover.Body>
+  //       <div className="schedule-popup">
+  //         {/* {scheduleList.length > 0 && (
+  //           <ul>
+  //             {scheduleList.map((schedule, index) => {
+  //               return (
+  //                 <Schedule
+  //                   key={index}
+  //                   selected_date={selected_date}
+  //                   date={date}
+  //                   schedule={schedule}
+  //                   getScheduleList={getScheduleList}
+  //                   getScheduleListByMonth={getScheduleListByMonth}
+  //                 />
+  //               );
+  //             })}
+  //           </ul>
+  //         )} */}
+  //         {addSchedule && (
+  //           <div className="add-textarea">
+  //             <textarea
+  //               // onChange={(e) => setSchedule(e.target.value)}
+  //             ></textarea>
+  //             <FontAwesomeIcon
+  //               icon={faSave}
+  //               size="xl"
+  //               pull="right"
+  //               className="save-icon"
+  //               onClick={() => saveSchedule()}
+  //             />
+  //           </div>
+  //         )}
+  //         {!addSchedule && (
+  //           <Button
+  //             className="add-schedule"
+  //             onClick={() => setAddSchedule(true)}
+  //           >
+  //             <FontAwesomeIcon icon={faPlus} />
+  //             <span>Add</span>
+  //           </Button>
+  //         )}
+  //       </div>
+  //     </Popover.Body>
+  //   </Popover>
+  // );
 
   return (
     // <OverlayTrigger
