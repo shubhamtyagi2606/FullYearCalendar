@@ -4,8 +4,6 @@ interface MonthGridProps {
   changeMonth: (month: number) => void;
 }
 
-type colorKeyType = 28 | 29 | 30 | 31;
-
 const MonthGrid: React.FC<MonthGridProps> = ({ year, month, changeMonth }) => {
   const firstDay: number[] = [];
   const lastDay: number[] = [];
@@ -15,7 +13,7 @@ const MonthGrid: React.FC<MonthGridProps> = ({ year, month, changeMonth }) => {
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
 
-  let colorArray = {
+  const colorArray: Record<number, string> = {
     28: "yellow",
     29: "yellow",
     30: "purple",
@@ -27,10 +25,10 @@ const MonthGrid: React.FC<MonthGridProps> = ({ year, month, changeMonth }) => {
     lastDay[index] = new Date(year, index + 1, 0).getDate();
   });
 
-  const rows: JSX.Element[] = [];
+  const rows = [];
 
   for (let i = 0; i < 3; i++) {
-    const columns: JSX.Element[] = [];
+    const columns = [];
 
     for (let j = 0; j < 7; j++) {
       let monthIndex: number = -Infinity;
@@ -41,7 +39,7 @@ const MonthGrid: React.FC<MonthGridProps> = ({ year, month, changeMonth }) => {
         }
       }
 
-      let className = "month-column text-" + colorArray[lastDay[monthIndex] as colorKeyType] + (monthIndex === month ? " active" : "");
+      let className = "month-column text-" + colorArray[lastDay[monthIndex]] + (monthIndex === month ? " active" : "");
 
       columns.push(
         <div

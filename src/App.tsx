@@ -1,11 +1,10 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Calender from "./components/Calender";
+import Calendar from "./components/Calendar";
 
 function App() {
   return (
     <div className="App">
-      <Calender />
+      <Calendar />
     </div>
   );
 }

@@ -1,49 +1,59 @@
 {
-    "name": "full-year-calender",
-    "version": "0.1.0",
-    "private": true,
-    "author": "Vishad Tyagi",
-    "type": "module",
-    "dependencies": {
-        "@fortawesome/free-solid-svg-icons": "^6.3.0",
-        "@fortawesome/react-fontawesome": "^0.2.0",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^13.5.0",
-        "axios": "^1.3.4",
-        "bootstrap": "^5.2.3",
-        "react": "^18.2.0",
-        "react-bootstrap": "^2.7.2",
-        "react-dom": "^18.2.0",
-        "react-scripts": "5.0.1"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "@types/react": "^19.0.8",
-        "@types/react-dom": "^19.0.3",
-        "typescript": "^4.9.5"
-    }
+  "name": "full-year-calendar",
+  "version": "0.1.0",
+  "description": "A full-year calendar React component with month and date navigation.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "author": "Vishad Tyagi",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamtyagi2606/FullYearCalendar"
+  },
+  "keywords": [
+    "react",
+    "calendar",
+    "full-year",
+    "date-picker"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "babel-loader": "^9.2.1",
+    "react-scripts": "^5.0.1",
+    "rollup": "^3.0.0",
+    "rollup-plugin-dts": "^5.0.0",
+    "typescript": "^4.9.5"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "react-scripts build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

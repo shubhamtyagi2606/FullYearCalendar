@@ -19,12 +19,12 @@ const DateGrid: React.FC<DateGridProps> = ({ year, month, date, changeDate }) =>
   //   [month,year]
   // );
 
-  const rows: JSX.Element[] = [];
+  const rows = [];
   let colorArray: Record<number, string> = { 30: "purple", 31: "green" };
   const key = year % 4 === 0 ? 29 : 28;
   colorArray = { ...colorArray, [key]: "yellow" };
 
-  const getScheduleListByMonth = async () => {
+  // const getScheduleListByMonth = async () => {
     // await axios
     //   .get(
     //     `http://localhost:4001/api/v1/schedule/` +
@@ -35,7 +35,7 @@ const DateGrid: React.FC<DateGridProps> = ({ year, month, date, changeDate }) =>
     //   .then(({ data }) => {
     //     setScheduleList(data);
     //   });
-  };
+  // };
 
   // const hasEvents = scheduleList.map((schedule) => {
   //   return new Date(schedule.date).getDate();
@@ -62,10 +62,8 @@ const DateGrid: React.FC<DateGridProps> = ({ year, month, date, changeDate }) =>
             key={dateValue}
             year={year}
             month={month}
-            date={date}
             dateValue={dateValue}
             changeDate={changeDate}
-            getScheduleListByMonth={getScheduleListByMonth}
           ></DateBlock>
         </div>
       );

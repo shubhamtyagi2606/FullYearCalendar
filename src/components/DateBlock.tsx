@@ -11,13 +11,13 @@ import React from "react";
 interface DateBlockProps {
   year: number;
   month: number;
-  date: number;
+  // date: number;
   changeDate: (date: number) => void;
   dateValue: number;
-  getScheduleListByMonth: () => void;
+  // getScheduleListByMonth: () => void;
 }
 
-const DateBlock: React.FC<DateBlockProps> = ({ year, month, date, changeDate, dateValue, getScheduleListByMonth }) => {
+const DateBlock: React.FC<DateBlockProps> = ({ year, month, changeDate, dateValue }) => {
   // const [addSchedule, setAddSchedule] = useState(false);
   // const [schedule, setSchedule] = useState("");
   // const [scheduleList, setScheduleList] = useState([]);

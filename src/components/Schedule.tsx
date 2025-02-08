@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { faTimesCircle, faSave } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faTimesCircle, faSave } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import axios from "axios";
 
 interface ScheduleProps {
@@ -53,24 +53,24 @@ const Schedule:React.FC<ScheduleProps> = ({
             onChange={(e) => setEditSchedule(e.target.value)}
             defaultValue={editSchedule}
           ></textarea>
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon={faSave}
             size="xl"
             pull="right"
             className="save-icon"
-            // onClick={() => saveEditSchedule(schedule._id)}
-          />
+            onClick={() => saveEditSchedule(schedule._id)}
+          /> */}
         </div>
       )}
       {!edit && (
         <>
           <span onClick={() => setEdit(true)}>- {schedule.task}</span>
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon={faTimesCircle}
             size="lg"
             className="delete-icon"
-            // onClick={() => deleteSchedule(schedule._id)}
-          />
+            onClick={() => deleteSchedule(schedule._id)}
+          /> */}
         </>
       )}
     </li>

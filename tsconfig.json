@@ -9,6 +9,5 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "skipLibCheck": true,
-    "types": ["@testing-library/jest-dom"]
   },
 }

@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies and build
       run: |
         npm install
-        npm run build
+        npm run prepublishOnly
 
     # Step 4: Deploy to S3
     - name: Deploy to S3
