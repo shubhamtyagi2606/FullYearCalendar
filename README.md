@@ -11,7 +11,7 @@ FullYearCalendar is a React component that displays a full-year calendar with th
 You can install FullYearCalendar as an NPM package:
 
 ```sh
-npm install full-year-calendar
+npm install @vishadtyagi/full-year-calendar
 ```
 ````
 
@@ -20,18 +20,11 @@ npm install full-year-calendar
 Import the `FullYearCalendar` component and use it in your React app:
 
 ```tsx
-import React, { useState } from "react";
-import FullYearCalendar from "full-year-calendar";
+import "@vishadtyagi/full-year-calendar/dist/index.cjs.css";
+import FullYearCalendar from "@vishadtyagi/full-year-calendar";
 
 const App = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-
-  return (
-    <div>
-      <h1>Full Year Calendar</h1>
-      <FullYearCalendar />
-    </div>
-  );
+  return <FullYearCalendar />
 };
 
 export default App;

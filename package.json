@@ -1,59 +1,52 @@
 {
-  "name": "full-year-calendar",
-  "version": "0.1.0",
-  "description": "A full-year calendar React component with month and date navigation.",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "author": "Vishad Tyagi",
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shubhamtyagi2606/FullYearCalendar"
-  },
-  "keywords": [
-    "react",
-    "calendar",
-    "full-year",
-    "date-picker"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
-    "@rollup/plugin-babel": "^6.0.0",
-    "@rollup/plugin-commonjs": "^24.0.0",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "babel-loader": "^9.2.1",
-    "react-scripts": "^5.0.1",
-    "rollup": "^3.0.0",
-    "rollup-plugin-dts": "^5.0.0",
-    "typescript": "^4.9.5"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "react-scripts build"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "@vishadtyagi/full-year-calendar",
+    "version": "0.1.9",
+    "description": "A full-year calendar React component with month and date navigation.",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "author": "Vishad Tyagi",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shubhamtyagi2606/FullYearCalendar"
+    },
+    "keywords": [
+        "react",
+        "calendar",
+        "full-year",
+        "date-picker"
+    ],
+    "license": "MIT",
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tslib": "^2.6.2"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.26.3",
+        "@babel/preset-react": "^7.26.3",
+        "@babel/preset-typescript": "^7.26.0",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-commonjs": "^24.1.0",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^15.3.1",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^12.1.2",
+        "@types/react": "^19.0.8",
+        "@types/react-dom": "^19.0.3",
+        "babel-loader": "^9.2.1",
+        "rollup": "^3.0.0",
+        "rollup-plugin-dts": "^5.0.0",
+        "rollup-plugin-postcss": "^4.0.2",
+        "typescript": "^4.9.5"
+    },
+    "scripts": {
+        "build": "rollup -c",
+        "prepublishOnly": "npm run build"
+    }
 }
