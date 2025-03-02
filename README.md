@@ -1,46 +1,69 @@
-# FullYearCalendar
+# Full Year Calendar
 
-FullYearCalendar is a React component that displays a full-year calendar with the ability to add, update, and delete schedules for specific dates.
+## 📌 Overview
+The **Full Year Calendar** is a React-based interactive calendar component that displays an entire year's view. Users can navigate through different years, months, and dates seamlessly.
 
-## 🚀 Demo
+## 🚀 Features
+- Displays a **full-year view**
+- Interactive **year, month, date, and day selection**
+- Fully **responsive UI** for desktop and mobile
+- Designed with **flexbox for structured layouts**
+- Clickable **month and date selection**
+- Customizable color themes for special days
 
-[Live Demo](https://d2dewcd6bifoh8.cloudfront.net)
+## 🛠️ Technologies Used
+- **React.js** - Frontend UI framework
+- **CSS Flexbox** - For responsive grid layout
+- **TypeScript (Optional)** - For type safety
 
-## 📦 Installation
-
-You can install FullYearCalendar as an NPM package:
-
-```sh
-npm install @vishadtyagi/full-year-calendar
+## 📂 Project Structure
 ```
-````
-
-## 🚀 Usage
-
-Import the `FullYearCalendar` component and use it in your React app:
-
-```tsx
-import "@vishadtyagi/full-year-calendar/dist/index.cjs.css";
-import FullYearCalendar from "@vishadtyagi/full-year-calendar";
-
-const App = () => {
-  return <FullYearCalendar />
-};
-
-export default App;
+FullYearCalendar/
+│-- src/
+│   │-- components/
+│   │   │-- Calendar.tsx
+│   │   │-- DateGrid.tsx
+│   │   │-- DayGrid.tsx
+│   │   │-- MonthGrid.tsx
+│   │   │-- YearGrid.tsx
+│   │-- styles/
+│   │   │-- Calendar.css
+│   │-- App.tsx
+│-- public/
+│-- README.md
+│-- package.json
 ```
 
-## 🎯 Features
+## 🔧 Installation & Setup
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/shubhamtyagi2606/FullYearCalendar.git
+   cd FullYearCalendar
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+3. **Run the development server:**
+   ```sh
+   npm start
+   ```
+4. Open **http://localhost:3000/** in your browser.
 
-- 📅 Display a full-year calendar
-- 🔄 Navigate through years and months
-- 🎨 Highlight current date, month, and days with different colors
-- 📆 Display days of the week
+## 🎨 Styling & Customization
+- The main styles are defined in `Calendar.css`.
+- Modify colors, fonts, and spacing according to your design needs.
 
-## 🤝 Contributing
+## 🖥️ Responsive Design
+The UI is designed to work on **both desktop and mobile screens**, adjusting layouts dynamically with media queries.
 
-Contributions are welcome! Feel free to submit issues or create pull requests.
+## 🤝 Contributions
+Feel free to fork this repository, create a branch, and submit a pull request!
 
-## 📄 License
+## 📜 License
+This project is open-source and available under the **MIT License**.
 
-This project is licensed under the MIT License.
+---
+
+🔗 **Author:** [Shubham Tyagi](https://github.com/shubhamtyagi2606)
+
