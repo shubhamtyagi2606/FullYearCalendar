@@ -14,12 +14,12 @@ const Calendar: React.FC = () => {
   const changeDate = (updatedDate: number) => setDate(updatedDate);
 
   return (
-    <div className="container">
-      <div className="row upper-row">
+    <div className="full-year-calendar-container">
+      <div className="full-year-calendar-row full-year-calendar-upper-row">
         <YearGrid year={year} changeYear={changeYear} />
         <MonthGrid year={year} month={month} changeMonth={changeMonth} />
       </div>
-      <div className="row lower-row">
+      <div className="full-year-calendar-row full-year-calendar-lower-row">
         <DateGrid year={year} month={month} date={date} changeDate={changeDate} />
         <DayGrid year={year} month={month} date={date} />
       </div>

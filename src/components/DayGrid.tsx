@@ -13,13 +13,13 @@ const DayGrid: React.FC<DayGridProps> = ({ year, month, date }) => {
     let k = 0;
     for (let j = 0; j < days.length; j++) {
       const dayIndex = i + j < days.length ? i + j : k++;
-      const className = ((date > 7 ? Math.ceil(date % 7) === 0 ? 7 : Math.ceil(date % 7) : date) === (i + 1) && dayIndex === ((new Date(year, month, date).getDay() === 0 ? 7 : new Date(year, month, date).getDay()) - 1)) ? "day-column active " : "day-column ";
+      const className = ((date > 7 ? Math.ceil(date % 7) === 0 ? 7 : Math.ceil(date % 7) : date) === (i + 1) && dayIndex === ((new Date(year, month, date).getDay() === 0 ? 7 : new Date(year, month, date).getDay()) - 1)) ? "full-year-calendar-day-column full-year-calendar-active " : "full-year-calendar-day-column ";
       columns.push(
         <div
           key={dayIndex}
           className={
             dayIndex === 6
-              ? className + "text-red"
+              ? className + "full-year-calendar-text-red"
               : className
           }
         >
@@ -27,11 +27,11 @@ const DayGrid: React.FC<DayGridProps> = ({ year, month, date }) => {
         </div>
       );
     }
-    rows.push(<div className="row" key={i}>{columns}</div>);
+    rows.push(<div className="full-year-calendar-row" key={i}>{columns}</div>);
   }
 
   return (
-    <div className="day-grid">
+    <div className="full-year-calendar-day-grid">
       {rows}
     </div>
   );

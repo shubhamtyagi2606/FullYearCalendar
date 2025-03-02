@@ -1,164 +1,249 @@
-.container {
+.full-year-calendar-container {
     text-align: center;
     font-weight: bold;
-    margin: 93px 200px;
+    margin: 5% auto;
     color: black;
+    max-width: 90%;
 }
 
-.row {
+.full-year-calendar-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.upper-row,
-.lower-row {
+.full-year-calendar-upper-row,
+.full-year-calendar-lower-row {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
 }
 
-.year-grid {
+.full-year-calendar-year-grid,
+.full-year-calendar-month-grid,
+.full-year-calendar-date-grid,
+.full-year-calendar-day-grid {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
-    border: 1px solid black;
-    width: 30%;
-    height: 150px;
-    position: relative;
-}
-
-.arrow {
-    border: none;
-    background: none;
-    color: black;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.left-arrow {
-    margin-right: 15px;
-}
-
-.right-arrow {
-    margin-left: 15px;
-}
-
-.date-grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    border: 1px solid black;
+    border: 0.1vw solid black;
+    font-size: 1.3vw;
     flex-wrap: wrap;
-    width: 30%;
 }
 
-.date-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 50px;
-    cursor: pointer;
+.full-year-calendar-year-grid {
+    font-size: 3vw;
 }
 
-.month-grid,
-.day-grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    font-size: 18px;
-    flex-wrap: wrap;
+.full-year-calendar-month-grid,
+.full-year-calendar-day-grid {
     width: 70%;
 }
 
-.month-column {
-    cursor: pointer;
+.full-year-calendar-date-grid,
+.full-year-calendar-year-grid {
+    width: 30%;
 }
 
-.month-column,
-.day-column {
+.full-year-calendar-date-column,
+.full-year-calendar-month-column,
+.full-year-calendar-day-column {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 50px;
+    padding: 5px;
+    height: 6vh;
 }
 
-.text-red {
+.full-year-calendar-month-column,
+.full-year-calendar-day-column {
+    width: 90px;
+}
+
+.full-year-calendar-date-column {
+    width: 45px;
+    cursor: pointer;
+}
+
+.full-year-calendar-month-column {
+    cursor: pointer;
+}
+
+.full-year-calendar-arrow {
+    border: none;
+    background: none;
+    color: black;
+    font-size: 1.5vw;
+    cursor: pointer;
+    padding: 0.5vw;
+}
+
+.full-year-calendar-left-arrow {
+    margin-right: 2%;
+}
+
+.full-year-calendar-right-arrow {
+    margin-left: 2%;
+}
+
+.full-year-calendar-text-red {
     color: #e96565;
 }
 
-.text-yellow {
+.full-year-calendar-text-yellow {
     color: #dbd092;
 }
 
-.text-purple {
+.full-year-calendar-text-purple {
     color: #7634a5;
 }
 
-.text-green {
+.full-year-calendar-text-green {
     color: #279792;
 }
 
-.active {
+.full-year-calendar-active {
     background-color: aqua;
     color: black;
 }
 
-@media screen and (max-width: 768px) {
-    .container {
-        margin: 50px 20px;
-    }
-
-    .upper-row,
-    .lower-row {
+@media screen and (max-width: 360px) {
+    .full-year-calendar-upper-row,
+    .full-year-calendar-lower-row {
         flex-wrap: wrap;
-        /* Allow items to stack if needed */
     }
 
-    .year-grid {
-        font-size: 30px;
-        /* Reduce font size for smaller screens */
-        width: 99.9%;
-        /* Make it full width */
-        height: 100px;
-        /* Reduce height */
+    .full-year-calendar-year-grid,
+    .full-year-calendar-month-grid,
+    .full-year-calendar-date-grid,
+    .full-year-calendar-day-grid {
+        border: 0.2vw solid black;
+        width: 100%;
     }
 
-    .arrow {
-        font-size: 20px;
-        /* Decrease arrow size */
-        padding: 5px;
+    .full-year-calendar-year-grid {
+        font-size: 5vw;
+        height: 15vh;
     }
 
-    .date-grid, 
-    .day-grid {
+    .full-year-calendar-date-grid,
+    .full-year-calendar-day-grid {
         flex-wrap: nowrap;
     }
 
-    .date-grid,
-    .month-grid,
-    .day-grid {
-        width: 99.9%;
-        /* Ensure full width */
-        font-size: 14px;
-        padding: 5px;
+    .full-year-calendar-date-column,
+    .full-year-calendar-month-column,
+    .full-year-calendar-day-column {
+        height: 5vh;
+        font-size: 2vw;
+        min-width: 20px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 480px) {
+    .full-year-calendar-upper-row,
+    .full-year-calendar-lower-row {
+        flex-wrap: wrap;
     }
 
-    .date-column,
-    .month-column,
-    .day-column {
+    .full-year-calendar-year-grid,
+    .full-year-calendar-month-grid,
+    .full-year-calendar-date-grid,
+    .full-year-calendar-day-grid {
+        border: 0.2vw solid black;
+        width: 100%;
+    }
+
+    .full-year-calendar-year-grid {
+        font-size: 5vw;
+        height: 15vh;
+    }
+
+    .full-year-calendar-date-grid,
+    .full-year-calendar-day-grid {
+        flex-wrap: nowrap;
+    }
+
+    .full-year-calendar-date-column,
+    .full-year-calendar-month-column,
+    .full-year-calendar-day-column {
+        height: 5vh;
+        font-size: 2vw;
+        min-width: 25px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 600px) {
+    .full-year-calendar-upper-row,
+    .full-year-calendar-lower-row {
+        flex-wrap: wrap;
+    }
+
+    .full-year-calendar-year-grid,
+    .full-year-calendar-month-grid,
+    .full-year-calendar-date-grid,
+    .full-year-calendar-day-grid {
+        border: 0.2vw solid black;
+        width: 100%;
+    }
+
+    .full-year-calendar-year-grid {
+        font-size: 5vw;
+        height: 15vh;
+    }
+
+    .full-year-calendar-date-grid,
+    .full-year-calendar-day-grid {
+        flex-wrap: nowrap;
+    }
+
+    .full-year-calendar-date-column,
+    .full-year-calendar-month-column,
+    .full-year-calendar-day-column {
+        height: 5vh;
+        font-size: 2vw;
+        min-width: 40px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+
+    .full-year-calendar-month-column,
+    .full-year-calendar-day-column {
+        width: 30px;
+    }
+
+    .full-year-calendar-date-column {
+        width: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .full-year-calendar-month-column,
+    .full-year-calendar-day-column {
         width: 50px;
-        /* Reduce size */
-        height: 40px;
-        font-size: 12px;
+    }
+
+    .full-year-calendar-date-column {
+        width: 25px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+
+    .full-year-calendar-month-column,
+    .full-year-calendar-day-column {
+        width: 70px;
+    }
+
+    .full-year-calendar-date-column {
+        width: 35px;
     }
 }

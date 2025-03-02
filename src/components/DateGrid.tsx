@@ -53,9 +53,9 @@ const DateGrid: React.FC<DateGridProps> = ({ year, month, date, changeDate }) =>
           key={dateValue}
           className={
             // newClass +
-            "date-column " +
-            (colorArray.hasOwnProperty(dateValue) ? "text-" + colorArray[dateValue] : "") +
-            (dateValue === date ? " active" : "")
+            "full-year-calendar-date-column " +
+            (colorArray.hasOwnProperty(dateValue) ? "full-year-calendar-text-" + colorArray[dateValue] : "") +
+            (dateValue === date ? " full-year-calendar-active" : "")
           }
         >
           <DateBlock
@@ -68,11 +68,11 @@ const DateGrid: React.FC<DateGridProps> = ({ year, month, date, changeDate }) =>
         </div>
       );
     }
-    rows.push(<div className="row" key={i}>{columns}</div>);
+    rows.push(<div className="full-year-calendar-row" key={i}>{columns}</div>);
   }
 
   return (
-    <div className="date-grid">
+    <div className="full-year-calendar-date-grid">
       {rows}
     </div>
   );

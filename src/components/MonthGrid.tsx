@@ -39,7 +39,7 @@ const MonthGrid: React.FC<MonthGridProps> = ({ year, month, changeMonth }) => {
         }
       }
 
-      let className = "month-column text-" + colorArray[lastDay[monthIndex]] + (monthIndex === month ? " active" : "");
+      let className = "full-year-calendar-month-column full-year-calendar-text-" + colorArray[lastDay[monthIndex]] + (monthIndex === month ? " full-year-calendar-active" : "");
 
       columns.push(
         <div
@@ -55,11 +55,11 @@ const MonthGrid: React.FC<MonthGridProps> = ({ year, month, changeMonth }) => {
         firstDay[monthIndex as number] = -Infinity;
       }
     }
-    rows.push(<div className="row" key={i}>{columns}</div>);
+    rows.push(<div className="full-year-calendar-row" key={i}>{columns}</div>);
   }
 
   return (
-    <div className="month-grid">
+    <div className="full-year-calendar-month-grid">
       {rows}
     </div>
   );
